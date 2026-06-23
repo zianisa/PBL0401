@@ -1,0 +1,58 @@
+{% include 'header.html' %}
+<body>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <h1>{{appType}} | Car Project</h1>
+        <h3>
+          Demo:
+          <a href="{{url_for('createcar')}}">Create</a>
+          /
+          <a href="{{url_for('readcar')}}">Read</a>
+          /
+          <a href="{{url_for('updatecar')}}">Update</a>
+          /
+          <a href="{{url_for('deletecar')}}">Delete</a>
+          /
+          <a href="{{url_for('searchcar')}}">Search</a>
+        </h3>
+      </div>
+    </div>
+    <br />
+    <div class="row">
+      <div class="col-md-12">
+        <h4>Update Car Data</h4>
+
+        <form role="form" action="{{url_for('updatecar')}}" method="POST">
+          <div class="form-group">
+            <label for="carName">Nama Mobil yang Akan Diubah harganya:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="carName"
+              name="carName"
+              placeholder="Nama harus sama persis"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="carPrice">Harga Baru (USD):</label>
+            <input
+              type="text"
+              class="form-control"
+              id="carPrice"
+              name="carPrice"
+              placeholder="Masukkan harga baru"
+              required
+            />
+          </div>
+
+          <button type="submit" class="btn btn-primary">Update Price</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="../static/js/bootstrap.min.js"></script>
+</body>
+{% include 'footer.html' %}
